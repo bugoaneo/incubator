@@ -15,3 +15,74 @@ const f10 = () => {
  }, [0, 0]);
  document.querySelector('.out-10').innerHTML = res;
 }
+
+
+
+/*cool %)))*/
+let wizards = [
+ {
+  name: 'Harry Potter',
+  house: 'Gryfindor'
+ },
+ {
+  name: 'Cedric Diggory',
+  house: 'Hufflepuff'
+ },
+ {
+  name: 'Tonks',
+  house: 'Hufflepuff'
+ },
+ {
+  name: 'Ronald Weasley',
+  house: 'Gryfindor'
+ },
+ {
+  name: 'Hermione Granger',
+  house: 'Gryfindor'
+ }];
+
+
+function wizardHouse(item) {
+ if (item.house === 'Hufflepuff') {
+  return true;
+ }
+}
+
+let arr = wizards.filter(wizardHouse).map(item => { return item.name })
+
+
+console.log(arr);
+
+
+let arr2 = wizards.reduce(function (newArr, wizard) {
+ if (wizard.house === 'Hufflepuff') {
+  newArr.push(wizard.name);
+ }
+ return newArr;
+}, []);
+
+// Получаем имена волшебников из Хаффлпафф
+let hufflepuff = wizards.reduce(function (newArr, wizard) {
+ if (wizard.house === 'Hufflepuff') {
+  newArr.push(wizard.name);
+ }
+ return newArr;
+}, []);
+
+console.log(arr2);
+console.log(hufflepuff);
+
+
+[0, 1, 2, 3, 4].reduce(function (previousValue, currentValue, index, array) {
+ return previousValue + currentValue;
+});
+
+const euro = [29.76, 41.85, 46.5];
+const above30 = euro.reduce((total, amount) => {
+ if (amount > 30) {
+  total.push(amount);
+ }
+ return total;
+}, []);
+
+above30 // [ 41.85, 46.5 ]
