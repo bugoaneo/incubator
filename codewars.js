@@ -57,3 +57,67 @@ console.log(removeSmallest([1, 2, 3, 4, 5]));//, [2, 3, 4, 5], "Wrong result for
 console.log(removeSmallest([-5, 3, 2, 1, 4]));//, [5, 3, 2, 4], "Wrong result for [5, 3, 2, 1, 4]"
 console.log(removeSmallest([2, 2, 1, 2, 1]));//, [2, 2, 2, 1], "Wrong result for [2, 2, 1, 2, 1]"
 console.log(removeSmallest([]));//, [], "Wrong result for []"
+
+
+function saleHotdogs(n) {
+ if (n < 5) {
+  return n * 100;
+ } else if (n >= 5 && n < 10) {
+  return n * 95;
+ } else {
+  return n * 90;
+ }
+}
+
+// console.log(saleHotdogs(1));///, 100
+// console.log(saleHotdogs(4));///, 400
+// console.log(saleHotdogs(5));//, 475
+// console.log(saleHotdogs(9));//, 855
+// console.log(saleHotdogs(10));//, 900
+// console.log(saleHotdogs(100));//, 9000
+
+
+function howManydays(month) {
+ var days;
+ switch (month) {
+  case 1:
+   days = 31;
+   break;
+  case 2:
+   days = 28;
+   break
+  case 3:
+  case 5:
+  case 7:
+  case 8:
+  case 10:
+  case 12:
+   days = 31;
+   break;
+  case 4:
+  case 6:
+  case 9:
+  case 11:
+   days = 30;
+   break;
+ }
+ return days;
+}
+
+// console.log(howManydays(1));//,31
+// console.log(howManydays(2));//,28
+// console.log(howManydays(3));//,31
+// console.log(howManydays(4));//,30
+// console.log(howManydays(12));//,31
+
+function padIt(str, n) {
+ while (n > 0) { str = (n % 2 === 0) ? str + '*' : '*' + str; }
+ n--;
+ return str;
+}
+
+console.log(padIt("a", 1), "*a");
+console.log(padIt("a", 2), "*a*");
+console.log(padIt("a", 3), "**a*");
+console.log(padIt("a", 4), "**a**");
+console.log(padIt("a", 5), "***a**");
