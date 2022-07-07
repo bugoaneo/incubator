@@ -17,6 +17,28 @@ const f10 = () => {
 }
 
 
+// TASK 10
+// // По нажатию b-10 выполняется функция f10. Функция перебирает объект a10 и создает новый объект z10 со значениямия которые по модулю больше 5. Связка ключ - значение сохраняется. Вывести результат в консоль.
+
+let ar10 = { "hi": 5, "test": 2, "best": 12, "quest": -6 };
+let z10 = {};
+// ожидаю {"best" : 12, "quest" : -6};
+
+const func10 = () => {
+ for (let item in a10) {
+  if (callback10(ar10[item])) {
+   z10[item] = ar10[item]
+  }
+ }
+ console.log(z10);
+}
+
+function callback10(elem) {
+ return (Math.abs(elem) > 5) ? true : false;
+}
+
+func10()
+
 
 /*cool %)))*/
 let wizards = [
