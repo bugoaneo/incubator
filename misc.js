@@ -40,6 +40,29 @@ function callback10(elem) {
 func10()
 
 
+// TASK 10
+// Напишите функцию эмуляцию splice.
+//Функция принимает 4 параметра - исходный массив, индекс с которого удалять, количество удаляемых элементов, и массив с новыми элементами, которые нужно добавить.
+//Возвращает НОВЫЙ массив на основе исходного и условий.
+
+let arr1 = [-2, 3, -4, 5, -6, 7];  // [15,-12]
+let from = 2;
+let num = 3;
+let add = [999, 1000]
+
+// что хочу получить в результате работы функции - [-2, 3, 999,1000,  7]
+const func1 = (arr, from, num, add) => {
+ let start = arr.slice(0, from);
+ let end = arr.slice((from + num));
+ let res = start.concat(add, end);
+ return res;
+}
+
+document.querySelector('.b-10').addEventListener('click', () => {
+ document.querySelector('.out-10').innerHTML = func1(arr1, from, num, add);
+});
+
+
 /*cool %)))*/
 let wizards = [
  {
