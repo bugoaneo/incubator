@@ -1,0 +1,44 @@
+.header__top {
+ padding: 0.3em 0;
+ font-size: 14px;
+ background-color: var(--bg);
+}
+
+.header__row {
+ @include row(jsb);
+}
+
+.header__top-nav {
+ @include row(jst, ac);
+
+ .btn {
+  margin-left: 0.4em;
+ }
+}
+
+.header__top-nav,
+.header__top-contact {
+ li * {
+  display: block;
+  padding: 0.5em;
+ }
+}
+
+.header__top-contact {
+ @include row(jst, ac);
+
+ li:first-child {
+  position: relative;
+
+  &:after {
+   content: '';
+   position: absolute;
+   @include center(y);
+   right: 0;
+   width: 1px;
+   height: 60%;
+   background-color: var(--grey30);
+
+  }
+ }
+}
