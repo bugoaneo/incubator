@@ -212,7 +212,32 @@ var sunday = [6737, 7244, 5776, 9826, 7057, 9247, 5842, 5484, 6543, 5153, 6832, 
 
 var stairs = [sunday, monday, tuesday, wednesday, thursday, friday, saturday];
 
-function stairsIn20(s) {
+// function stairsIn20(s) {
+//  let stairsInYear = [];
+//  for (var arr of s) {
+//   stairsInYear = stairsInYear.concat(arr);
+//  }
 
+// let myYear = stairsInYear.reduce((acc, item) => {
+//   return acc + item;
+//  },0)*20
+
+//  return myYear;
+// }
+
+// function stairsIn20(s) {
+//  let myArr = s.map(item => {
+//   item = item.reduce((acc, i) => {
+//    return acc + i;
+//   }, 0);
+//   return item;
+//  });
+//  console.log(myArr)
+// }
+
+function stairsIn20(s) {
+  let myArr = [].concat(...s).reduce((acc, item) => acc + item, 0) * 20;
+  return myArr;
 }
+
 console.log(stairsIn20(stairs))//, 54636040
