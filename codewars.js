@@ -266,3 +266,37 @@ console.log(reverseWords('The quick brown fox jumps over the lazy dog!'));//, 'e
 console.log(reverseWords('apple'));//, 'elppa'
 console.log(reverseWords('a b c d'));//, 'a b c d'
 console.log(reverseWords('double  spaced  words'));
+
+
+//Цель этого упражнения - преобразовать строку в новую строку, где каждый символ в новой строке является "(", если этот символ встречается только один раз в исходной строке, или ")", если этот символ встречается более одного раза в исходной строке.При определении того, является ли символ дубликатом, игнорируйте капитализацию.
+//Примеры
+
+//https://www.codewars.com/kata/54b42f9314d9229fd6000d9c/train/javascript
+
+//"din" => "((("
+//"recede" => "()()()()"
+//"Success" => ")()()())"
+//"(( @" => "))(("
+
+// "(" - если один раз
+//")" - еслм повтор
+
+function duplicateEncode(word) {
+  let myArr = word.toLowerCase().split('');
+  console.log(myArr)
+  let newStr = myArr.map((i) => {
+    return myArr.indexOf(i) === myArr.lastIndexOf(i) ? '(' : ')';
+  }).join('');
+
+  // let newStr = myArr.map((i, ind) => {
+  // return  myArr.indexOf(i) === ind ? '(' : ')';
+  // }).join('');
+
+  return newStr;
+}
+
+
+console.log(duplicateEncode("din"));//, "((("
+console.log(duplicateEncode("recede"));//, "()()()"
+console.log(duplicateEncode("Success"));//, ")())())", "should ignore case"
+console.log(duplicateEncode("(( @"));//, "))(("
