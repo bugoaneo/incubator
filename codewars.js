@@ -268,7 +268,6 @@ console.log(reverseWords('a b c d'));//, 'a b c d'
 console.log(reverseWords('double  spaced  words'));
 
 
-<<<<<<< HEAD
 /*Task */
 //Find letter position in alfabet
 
@@ -332,37 +331,40 @@ console.log(likes(['Peter']));//, 'Peter likes this'
 console.log(likes(['Jacob', 'Alex']));//, 'Jacob and Alex like this'
 console.log(likes(['Max', 'John', 'Mark']));//, 'Max, John and Mark like this'
 console.log(likes(['Alex', 'Jacob', 'Mark', 'Max']));//, 'Alex, Jacob and 2 others like this'
-=======
-//Цель этого упражнения - преобразовать строку в новую строку, где каждый символ в новой строке является "(", если этот символ встречается только один раз в исходной строке, или ")", если этот символ встречается более одного раза в исходной строке.При определении того, является ли символ дубликатом, игнорируйте капитализацию.
-//Примеры
 
-//https://www.codewars.com/kata/54b42f9314d9229fd6000d9c/train/javascript
 
-//"din" => "((("
-//"recede" => "()()()()"
-//"Success" => ")()()())"
-//"(( @" => "))(("
+/* Tasck*/
+//Create a function that returns the sum of the two lowest positive numbers given an array of minimum 4 positive integers.No floats or non - positive integers will be passed.
+//For example, when an array is passed like[19, 5, 42, 2, 77], the output should be 7.
 
-// "(" - если один раз
-//")" - еслм повтор
-
-function duplicateEncode(word) {
-  let myArr = word.toLowerCase().split('');
-  console.log(myArr)
-  let newStr = myArr.map((i) => {
-    return myArr.indexOf(i) === myArr.lastIndexOf(i) ? '(' : ')';
-  }).join('');
-
-  // let newStr = myArr.map((i, ind) => {
-  // return  myArr.indexOf(i) === ind ? '(' : ')';
-  // }).join('');
-
-  return newStr;
+function sumTwoSmallestNumbers(numbers) {
+  let min1 = Math.min(...numbers);
+  numbers.splice(numbers.indexOf(min1), 1);
+  let min2 = Math.min(...numbers);
+  return min1 + min2;
 }
 
+// function sumTwoSmallestNumbers(numbers) {
+//   var min = Number.MAX_SAFE_INTEGER;
+//   var secondMin = Number.MAX_SAFE_INTEGER;
 
-console.log(duplicateEncode("din"));//, "((("
-console.log(duplicateEncode("recede"));//, "()()()"
-console.log(duplicateEncode("Success"));//, ")())())", "should ignore case"
-console.log(duplicateEncode("(( @"));//, "))(("
->>>>>>> 8340528411896cce33219029d696d2f9d7c2c8f2
+//   var n;
+//   for (i = 0; i < numbers.length; i++) {
+//     n = numbers[i];
+//     if (n < min) {
+//       secondMin = min;
+//       min = n;
+//     } else if (n < secondMin) {
+//       secondMin = n;
+//     }
+//   }
+
+//   return min + secondMin;
+// }
+
+
+console.log(sumTwoSmallestNumbers([5, 8, 12, 19, 22]), 13, "Sum should be 13");
+console.log(sumTwoSmallestNumbers([15, 28, 4, 2, 43]), 6, "Sum should be 6");
+console.log(sumTwoSmallestNumbers([3, 87, 45, 12, 7]), 10, "Sum should be 10");
+console.log(sumTwoSmallestNumbers([23, 71, 33, 82, 1]), 24, "Sum should be 24");
+console.log(sumTwoSmallestNumbers([52, 76, 14, 12, 4]), 16, "Sum should be 16");
