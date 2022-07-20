@@ -385,3 +385,19 @@ function differenceInAges(ages) {
 
 console.log(differenceInAges([82, 15, 6, 38, 35]));//, [6, 82, 76]
 console.log(differenceInAges([57, 99, 14, 32]));//, [14, 99, 85]
+
+
+/*Convert number to reversed array of digits */
+//Given a random non - negative number, you have to return the digits of this number within an array in reverse order.
+//  Example(Input => Output):
+//348597 => [7, 9, 5, 8, 4, 3]
+//0 => [0]
+
+function digitize(n) {
+  // let arr = (''+n).split('').map(Number).reverse();
+  let arr = [...n.toString()].map(Number).reverse();
+  return arr;
+}
+
+console.log(digitize(35231));//, [1, 3, 2, 5, 3]
+console.log(digitize(0));
