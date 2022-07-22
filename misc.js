@@ -154,3 +154,57 @@ function goHome() {
 }
 
 console.log(goHome())
+
+
+/*Рекурсии */
+
+function sum(arr, n) {
+ // Only change code below this line
+ if (n <= 0) {
+  return 0;
+ } else {
+  return sum(arr, n - 1) + arr[n - 1]
+ }
+ // Only change code above this line
+}
+
+
+console.log(sum([1, 2, 3, 5, 8, 9], 6))
+
+
+function countup(n) {
+ if (n < 1) {
+  return [];
+ } else {
+  const countArray = countup(n - 1);
+  countArray.push(n);
+  return countArray;
+ }
+}
+console.log(countup(5));
+
+
+function countdown(n) {
+ if (n < 1) {
+  return [];
+ } else {
+  let arr = countdown(n - 1);
+  arr.unshift(n);
+  return arr;
+ }
+}
+console.log(countdown(5));
+
+
+function rangeOfNumbers(startNum, endNum) {
+ if (endNum - startNum === 0) {
+  return [startNum];
+ } else {
+  var numbers = rangeOfNumbers(startNum, endNum - 1);
+  numbers.push(endNum);
+  return numbers;
+ }
+};
+
+console.log(rangeOfNumbers(4, 8));
+console.log(rangeOfNumbers(6, 9));
